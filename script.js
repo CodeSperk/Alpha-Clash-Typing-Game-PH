@@ -43,7 +43,6 @@ function setElementValue(elementId, value){
 }
 
 
-
 function handleGamePlay(event){
   const pressedKey = event.key;
   
@@ -99,6 +98,11 @@ function playNow(){
 function gameOver(){
   hideElementById('playground-section');
   showElementById('score-section');
+
+  //get final score
+  const finalScore = getElementValueById('current-score');
+  //set final score
+  setElementValue('final-score', finalScore);
 
   //clear the last selected alphabet
   const currentAlphabet = getElementTextById('displayed-alphabet');
