@@ -6,6 +6,10 @@ function showElementById(elementId){
   const element = document.getElementById(elementId);
   element.classList.remove('hidden');
 }
+function setBgById(elementId){
+  const element = document.getElementById(elementId);
+  element.classList.add('bg-orange-500');
+}
 
 
 function generateARandomAlphabet(){
@@ -23,10 +27,11 @@ function generateARandomAlphabet(){
 
 function continueGame(){
   const alphabet = generateARandomAlphabet();
-
   //set random alphabet
   const alphaElement = document.getElementById('displayed-alphabet');
   alphaElement.innerText = alphabet;
+
+  setBgById(alphabet);
 }
 
 
