@@ -37,11 +37,11 @@
 <body class="font-poppins">
   <main class="bg-[#010313] min-h-screen bg-[url('./images/background.png')] bg-no-repeat bg-center">
     <!-- Home screen -->
-    <section>
+    <section id="home-section">
       <div class="flex text-white h-screen flex-col justify-center items-center">
         <h1 class="font-anton text-7xl md:text-[120px] xl:text-[150px]">ALPHA CLASH PRO</h1>
         <p class="text-xl font-medium mt-8">Unleash Your Keyboard Kung Fu : Play Now</p>
-        <button
+        <button onclick="playNow()"
           class="bg-white hover:bg-slate-200 text-black py-4 px-8 rounded-lg font-semibold text-xl mt-12">Play
           Now</button>
       </div>
@@ -49,7 +49,7 @@
 
     <!-- playground 
     ----------------- -->
-    <section class="hidden">
+    <section id="playground-section" class="hidden">
       <div class="h-screen flex flex-col gap-24 justify-center items-center md:w-4/5 mx-auto">
         <!-- screen -->
         <div class="artboard artboard-horizontal phone-5 bg-[#ffffffb3] border-[20px] border-[#010313cc] rounded-2xl ">
