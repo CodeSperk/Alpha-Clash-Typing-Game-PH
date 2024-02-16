@@ -10,8 +10,6 @@ function setBgById(elementId){
   const element = document.getElementById(elementId);
   element.classList.add('bg-orange-500');
 }
-
-
 function generateARandomAlphabet(){
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
   const alphabetArray = alphabets.split('');
@@ -24,6 +22,31 @@ function generateARandomAlphabet(){
   //set random alphabet in the display
   return randomAlphabet;
 }
+function getElementTextById(elementId){
+  const element = document.getElementById(elementId);
+  const content =  element.innerText;
+  return content;
+}
+
+
+
+function handleGamePlay(event){
+  const pressedKey = event.key;
+  
+  //get the expected key to be pressed
+  const currentAlphabet = getElementTextById('displayed-alphabet');
+  const lowerAlphabet = currentAlphabet.toLowerCase();
+  console.log(pressedKey, lowerAlphabet);
+
+  if(lowerAlphabet === pressedKey){
+    console.log('pressed right key');
+  }else{
+    console.log('pressed wrong key');
+  }
+
+}document.addEventListener('keyup', handleGamePlay);
+
+
 
 function continueGame(){
   const alphabet = generateARandomAlphabet();
