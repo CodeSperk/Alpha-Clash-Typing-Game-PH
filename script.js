@@ -45,6 +45,11 @@ function setElementValue(elementId, value){
 
 function handleGamePlay(event){
   const pressedKey = event.key;
+
+  //game over if pressed esc
+  if(pressedKey === 'Escape'){
+    gameOver();
+  }
   
   //get the expected key to be pressed
   const currentAlphabet = getElementTextById('displayed-alphabet');
