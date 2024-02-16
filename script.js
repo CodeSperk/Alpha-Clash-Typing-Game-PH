@@ -64,6 +64,10 @@ function handleGamePlay(event){
     const currentLife = getElementValueById('current-life');
     const updatedLife = currentLife - 1;
     setElementValue('current-life', updatedLife);
+
+    if(updatedLife === 0){
+      gameOver();
+    }
   }
 
 }document.addEventListener('keyup', handleGamePlay);
@@ -82,8 +86,18 @@ function continueGame(){
 
 function playNow(){
   hideElementById('home-section');
+  hideElementById('score-section');
   showElementById('playground-section');
 
+  //reset Life & Score
+  setElementValue('current-score', 0);
+  setElementValue('current-life', 5);
+
   continueGame();
+}
+
+function gameOver(){
+  hideElementById('playground-section');
+  showElementById('score-section');
 }
 
