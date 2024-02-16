@@ -99,5 +99,10 @@ function playNow(){
 function gameOver(){
   hideElementById('playground-section');
   showElementById('score-section');
+
+  //clear the last selected alphabet
+  const currentAlphabet = getElementTextById('displayed-alphabet');
+  const lowerAlphabet = currentAlphabet.toLocaleLowerCase();
+  removeBgById(lowerAlphabet);
 }
 
