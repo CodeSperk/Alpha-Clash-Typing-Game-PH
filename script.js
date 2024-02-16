@@ -10,6 +10,10 @@ function setBgById(elementId){
   const element = document.getElementById(elementId);
   element.classList.add('bg-orange-500');
 }
+function removeBgById(elementId){
+  const element = document.getElementById(elementId);
+  element.classList.remove('bg-orange-500');
+}
 function generateARandomAlphabet(){
   const alphabets = "abcdefghijklmnopqrstuvwxyz";
   const alphabetArray = alphabets.split('');
@@ -40,6 +44,9 @@ function handleGamePlay(event){
 
   if(lowerAlphabet === pressedKey){
     console.log('pressed right key');
+
+    removeBgById(pressedKey);
+    playNow();
   }else{
     console.log('pressed wrong key');
   }
