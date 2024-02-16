@@ -31,6 +31,16 @@ function getElementTextById(elementId){
   const content =  element.innerText;
   return content;
 }
+function getElementValueById(elementId){
+  const element = document.getElementById(elementId);
+  const elementValue =  element.innerText;
+  const value = parseInt(elementValue);
+  return value;
+}
+function setElementValue(elementId, value){
+  const element = document.getElementById(elementId);
+  element.innerText = value;
+}
 
 
 
@@ -40,15 +50,20 @@ function handleGamePlay(event){
   //get the expected key to be pressed
   const currentAlphabet = getElementTextById('displayed-alphabet');
   const lowerAlphabet = currentAlphabet.toLowerCase();
-  console.log(pressedKey, lowerAlphabet);
 
   if(lowerAlphabet === pressedKey){
-    console.log('pressed right key');
+    //update score
+    const currentScore = getElementValueById('current-score');
+    const updatedScore = currentScore + 1;
+    setElementValue('current-score', updatedScore)
 
     removeBgById(pressedKey);
-    playNow();
+    continueGame();
   }else{
-    console.log('pressed wrong key');
+    //update life
+    const currentLife = getElementValueById('current-life');
+    const updatedLife = currentLife - 1;
+    setElementValue('current-life', updatedLife);
   }
 
 }document.addEventListener('keyup', handleGamePlay);
